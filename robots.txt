@@ -1,0 +1,3 @@
+User-agent: *
+host: www.ti-units.ru
+Disallow: /bootstrap/
