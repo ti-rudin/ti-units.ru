@@ -6,7 +6,7 @@
     <meta name="description" content="Титаниум Софт - комплексная ИТ поддержка.">
     <meta name="author" content="Ti">
     
-    <title>Титаниум Cофт - комплексная ИТ поддержка. </title>
+    <title>Титаниум Cофт - комплексная ИТ поддержка.</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" />
