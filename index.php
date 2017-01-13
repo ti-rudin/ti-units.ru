@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Титаниум Софт - комплексная ИТ поддержка.">
     <meta name="author" content="Ti">
-    
-    <title>Ti - Титаниум Cофт - комплексная ИТ поддержка.</title>
+
+    <title>Ti - ИТ поддержка.</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" />
@@ -19,10 +19,10 @@
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
-    
+
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/modernizr.custom.js"></script>
-    
+
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
       <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -50,7 +50,7 @@ src="https://www.facebook.com/tr?id=1493834924245543&ev=PageView&noscript=1"
 
   <body>
 
-  <div id="navbar-main">	
+  <div id="navbar-main">
    <div id="fixed_nav" class="navbar navbar-inverse navbar-fixed-top ">
       <div class="container">
       <div class="img_wrap">
@@ -75,7 +75,7 @@ src="https://www.facebook.com/tr?id=1493834924245543&ev=PageView&noscript=1"
               <li> <a href="http://ti-soft.ru/"> Магазин</a></li>
               <li> <a href="/partners.php"> Партнеры</a></li>
               <li> <a href="/people.php" class="smoothScroll"> Команда</a></li>
-              <li> <a href="#contact" class="smoothScroll"> Контакты</a></li>      
+              <li> <a href="#contact" class="smoothScroll"> Контакты</a></li>
           </ul>
         </div>
         <nav class="mobile-menu">
@@ -87,7 +87,7 @@ src="https://www.facebook.com/tr?id=1493834924245543&ev=PageView&noscript=1"
               <li> <a href="http://ti-soft.ru/"><i class="mnu__icon fa fa-shopping-basket"></i> Магазин</a></li>
               <li> <a href="/partners.php"><i class="mnu__icon fa fa-sign-language"></i> Партнеры</a></li>
               <li> <a href="/people.php" class="smoothScroll"><i class="mnu__icon fa fa-users"></i> Команда</a></li>
-              <li> <a href="#contact" class="smoothScroll"><i class="mnu__icon fa fa-phone"></i> Контакты</a></li>           
+              <li> <a href="#contact" class="smoothScroll"><i class="mnu__icon fa fa-phone"></i> Контакты</a></li>
             </ul>
         </nav>
       </div>
@@ -121,7 +121,7 @@ src="https://www.facebook.com/tr?id=1493834924245543&ev=PageView&noscript=1"
               <li> <a href="http://ti-soft.ru/"> Магазин</a></li>
               <li> <a href="/partners.php"> Партнеры</a></li>
               <li> <a href="/people.php" class="smoothScroll"> Команда</a></li>
-              <li> <a href="#contact" class="smoothScroll"> Контакты</a></li>      
+              <li> <a href="#contact" class="smoothScroll"> Контакты</a></li>
           </ul>
         </div>
 					<nav class="mobile-menu">
@@ -137,7 +137,7 @@ src="https://www.facebook.com/tr?id=1493834924245543&ev=PageView&noscript=1"
             </ul>
         </nav>
         <!-- <div class="bitrix24">
-          <a href="" class="bitrix24__icon">&nbsp;</a>    
+          <a href="" class="bitrix24__icon">&nbsp;</a>
         </div> -->
 				</div>
 
@@ -148,8 +148,8 @@ src="https://www.facebook.com/tr?id=1493834924245543&ev=PageView&noscript=1"
 					</div>
 				</div>
 			</div>
-			
-	  		</header>	    
+
+	  		</header>
 	    </div><!-- /headerwrap -->
 
 		<div id="greywrap" name="greywrap" class="clearfix">
@@ -161,42 +161,42 @@ src="https://www.facebook.com/tr?id=1493834924245543&ev=PageView&noscript=1"
 					<h2>Техподдержка офиса</h2>
 					<p>Информационная безопасность офисной сети. Настройка сетевого оборудования. Системное администрирование.</p>
 					</div><!-- col-lg-4 -->
-					
+
 				<div class="col-lg-3 col-sm-6 col-md-6 callout clearfix">
 				<span class="icon icon-eye-5"></span>
 					<h2>Реклама и продвижение</h2>
 					<p>Настроим для вас рекламные каналы - Яндекс.Директ, Google.Adwords, SEO. Продвижение в социальных сетях.</p>
-				</div><!-- col-lg-4 -->	
+				</div><!-- col-lg-4 -->
 			</div>
-				
-				
+
+
 				<div class="col-lg-3 col-sm-6 col-md-6 callout">
 				<span class="icon icon-screen"></span>
 					<h2>Разработка <nobr>веб-сайтов</nobr></h2>
 					<p>У Вас до сих пор нет сайта? Или есть, но устарел? Обращайтесь! Воспользуйтесь нашим 15-летним опытом!</p>
-				
-					</div><!-- col-lg-4 -->	
+
+					</div><!-- col-lg-4 -->
 				<div class="col-lg-3 col-sm-6 col-md-6 callout">
 					<span class="icon icon-heart"></span>
 					<h2>Внедрение Битрикс24</h2>
 					<p>С современными инструментами организации коллективной работы, Вы станете сильнее! Поможем разобраться. </p>
-				</div><!-- col-lg-4 -->	
+				</div><!-- col-lg-4 -->
 			</div><!-- row -->
 		</div>
-			
+
 		</div>
-		
+
 		<!-- ==== ABOUT ==== -->
 		<div class="container" id="about" name="about">
 			<div class="row white">
 			<br>
 				<h1 class="centered">Важно для нас</h1>
 				<hr>
-				
+
 				<div class="col-lg-6 col-sm-6">
 					<p>Разве не здорово, когда вещи просто работают - сервера не "падают", компьютеры и программы стабильны, а принтеры - печатают? Ещё лучше, когда за IT-инфраструктуру отвечает не один штатный сисадмин, а команда с 15-летним опытом. Комплексное системное администрирование поможет вам забыть о технических вопросах, сосредоточиться на бизнесе и оптимизировать расходы.</p>
 				</div><!-- col-lg-6 -->
-				
+
 				<div class="col-lg-6 col-sm-6">
 					<p>Мы предлагаем мониторинг серверов и IP-телефонии, оптимизацию работы и обеспечение безопасности баз данных, управление сервисами и информационной средой. Это поможет минимизировать сбои и быстро решать любые проблемы. Результат - стабильно функционирующий бизнес и спокойствие ваших клиентов.</p>
 				</div><!-- col-lg-6 -->
@@ -210,16 +210,16 @@ src="https://www.facebook.com/tr?id=1493834924245543&ev=PageView&noscript=1"
 				<p>Больше 15 лет мы создаём маркетинговые концепции, фирменные стили, логотипы, наружную рекламу, листовки, буклеты, визитки и всё, что помогает наладить визуальную коммуникацию с аудиторией.</p>
 			</div><!-- container -->
 		</section><!-- section -->
-		
-		
-		
-		
+
+
+
+
 		<!-- ==== SERVICES ==== -->
 		<div class="container" >
 			<br>
 			<br>
-			
-			
+
+
 			<div class="row">
 				<h2 class="centered">Разработка адаптивных сайтов</h2>
 				<hr>
@@ -244,10 +244,10 @@ src="https://www.facebook.com/tr?id=1493834924245543&ev=PageView&noscript=1"
 						Наша компания — официальный партнёр Битрикс24. Мы поможем внедрить систему в ваше предприятие и обучим сотрудников ей пользоваться.
 					</p>
 				</div><!-- col-lg-6 -->
-				
+
 			</div><!-- row -->
 		</div><!-- container -->
-		
+
 		<!-- ==== PORTFOLIO ==== -->
 		<div class="container" id="portfolio" name="portfolio">
 		<br>
@@ -272,7 +272,7 @@ src="https://www.facebook.com/tr?id=1493834924245543&ev=PageView&noscript=1"
 						</figure><!-- /figure -->
 			    	</div><!-- /grid-mask -->
 
-				
+
 				<!-- PORTFOLIO IMAGE 2 -->
 <div class="grid mask mobile_item-hidden">
 						<figure>
@@ -283,9 +283,9 @@ src="https://www.facebook.com/tr?id=1493834924245543&ev=PageView&noscript=1"
 							</figcaption><!-- /figcaption -->
 						</figure><!-- /figure -->
 			    	</div><!-- /grid-mask -->
-			    	
 
-				
+
+
 				<!-- PORTFOLIO IMAGE 3 -->
 
 			    	<div class="grid mask">
@@ -311,7 +311,7 @@ src="https://www.facebook.com/tr?id=1493834924245543&ev=PageView&noscript=1"
 						</figure><!-- /figure -->
 			    	</div><!-- /grid-mask -->
 
-				
+
 				<!-- PORTFOLIO IMAGE 5 -->
 
 			    	<div class="grid mask mobile_item-hidden">
@@ -324,7 +324,7 @@ src="https://www.facebook.com/tr?id=1493834924245543&ev=PageView&noscript=1"
 						</figure><!-- /figure -->
 			    	</div><!-- /grid-mask -->
 
-				
+
 				<!-- PORTFOLIO IMAGE 6 -->
 
 			    	<div class="grid mask mobile_item-hidden">
@@ -349,7 +349,7 @@ src="https://www.facebook.com/tr?id=1493834924245543&ev=PageView&noscript=1"
 							</figcaption><!-- /figcaption -->
 						</figure><!-- /figure -->
 			    	</div><!-- /grid-mask -->
-				<!-- PORTFOLIO IMAGE 7 --> 
+				<!-- PORTFOLIO IMAGE 7 -->
 
 				<!-- PORTFOLIO IMAGE 8 -->
 
@@ -362,7 +362,7 @@ src="https://www.facebook.com/tr?id=1493834924245543&ev=PageView&noscript=1"
 							</figcaption><!-- /figcaption -->
 						</figure><!-- /figure -->
 			    	</div><!-- /grid-mask -->
-				<!-- PORTFOLIO IMAGE 8 --> 
+				<!-- PORTFOLIO IMAGE 8 -->
 
 				<!-- PORTFOLIO IMAGE 9 -->
 <div class="grid mask">
@@ -374,8 +374,8 @@ src="https://www.facebook.com/tr?id=1493834924245543&ev=PageView&noscript=1"
 							</figcaption><!-- /figcaption -->
 						</figure><!-- /figure -->
 			    	</div><!-- /grid-mask -->
-			    	
-				<!-- PORTFOLIO IMAGE 9 --> 
+
+				<!-- PORTFOLIO IMAGE 9 -->
 
 				<!-- PORTFOLIO IMAGE 10 -->
 
@@ -388,26 +388,26 @@ src="https://www.facebook.com/tr?id=1493834924245543&ev=PageView&noscript=1"
 							</figcaption><!-- /figcaption -->
 						</figure><!-- /figure -->
 			    	</div><!-- /grid-mask -->
-				<!-- PORTFOLIO IMAGE 10 -->  
+				<!-- PORTFOLIO IMAGE 10 -->
 				<br>
 				<br>
 	</div>
 
-  		
+
 <!-- ==== SECTION DIVIDER1 -->
 		<section  class="section-divider textdivider divider1" style="background-image:url('images/bg/divider1.jpg');">
 			<div class="container">
-			
-			
+
+
 				<h1>Лендинги и SMM: ещё ближе к аудитории</h1>
 				<hr>
 				<p>Мы разрабатываем лендинги, в которых сильные тексты, приятный дизайн и грамотная структура помогают вашим покупателям сделать правильный выбор.</p>
 			</div><!-- container -->
 		</section><!-- section -->
-		
+
 
 		<!-- ==== TEAM MEMBERS ==== -->
-		
+
 		<!-- ==== GREYWRAP ==== -->
 		<div id="greywrap">
 			<div class="container">
@@ -419,16 +419,16 @@ src="https://www.facebook.com/tr?id=1493834924245543&ev=PageView&noscript=1"
 						<h2>Стать клиентом</h2>
 						<p>Хотите стать нашим клиентом?<br>Тогда все просто. Вам надо просто позвонить )</p>
 						<a href="tel:=74992816924" class="phone_back"><span class="icon icon-phone"></span>+7 <span class="blue_char">(499)</span> 281-69-24 </a>
-					</div>					
+					</div>
 				</div><!-- row -->
 			</div>
 			<br>
 			<br>
 		</div><!-- greywrap -->
-		
-		
-		
-		
+
+
+
+
 		<!-- ==== SECTION DIVIDER4 ==== -->
 		<section id="blog" name="blog" class="section-divider textdivider divider4" style="background:url('images/bg/divider4.jpg');">
 			<div class="container">
@@ -437,7 +437,7 @@ src="https://www.facebook.com/tr?id=1493834924245543&ev=PageView&noscript=1"
 				<p>Хотите быть заметным в конкурентной интернет-гонке — качественного сайта вашей компании не достаточно. Поддерживать коммуникацию и привлекать целевую аудиторию помогут контекстная реклама, SEO и SMM.</p>
 			</div><!-- container -->
 		</section><!-- section -->
-		
+
 		<!-- ==== BLOG ==== -->
 		<div class="container" >
 		<br>
@@ -474,16 +474,16 @@ src="https://www.facebook.com/tr?id=1493834924245543&ev=PageView&noscript=1"
 					<p>Печатная продукция должна быть выдержана в едином стиле с сайтом. Мы имеем опыт в разработке упаковки, этикеток - еще до появления инернет, наши дизайнеры трудились на этом фронте! Наружная реклама, публикации в печатных изданиях - с нашей поддержкой вы получите качественную рекламную продукцию, а в собственной студии мы еще её музыкально оформим.</p>
 				</div>
 			</div>
-			
-				
-					
+
+
+
 			</div><!-- /row -->
 			<br>
 			<br>
 			<br>
 		</div><!-- /container -->
 
-		
+
 		<!-- ==== SECTION DIVIDER6 ==== -->
 		<section class="section-divider textdivider divider6" style="background-image:url('images/bg/divider6.jpg');">
 			<div class="container">
@@ -493,7 +493,7 @@ src="https://www.facebook.com/tr?id=1493834924245543&ev=PageView&noscript=1"
 				<p>+7 (499) 281-69-24, + 7 (926) 525-01-90</p>
 			</div><!-- container -->
 		</section><!-- section -->
-		
+
 		<div class="container" id="contact" name="contact">
 			<div class="row">
 			<br>
@@ -501,7 +501,7 @@ src="https://www.facebook.com/tr?id=1493834924245543&ev=PageView&noscript=1"
           <h1 class="left_text">Наш офис в Москве</h1>
         <hr class="left_hr">
         </div>
-				
+
 				<br>
 				<br>
 				<div class="col-md-4 col-sm-6">
@@ -514,13 +514,13 @@ src="https://www.facebook.com/tr?id=1493834924245543&ev=PageView&noscript=1"
 						<span class="icon icon-envelop"></span> <a href="mailto:info@ti-units.ru/"> info@ti-units.ru</a> <br/>
 					</p>
 					</div><!-- col -->
-				
-			
+
+
 				<div class="col-md-6 col-sm-6 col-md-offset-2">
 					<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=m0WLXtX2G8ic-ezOB4aIG6vMMyaiqn6D&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;sourceType=constructor&amp;scroll=true"></script>
 				</div>
 			</div><!-- row -->
-		
+
 		</div><!-- container -->
 
 
@@ -542,18 +542,18 @@ src="https://www.facebook.com/tr?id=1493834924245543&ev=PageView&noscript=1"
             <span class="icon icon-envelop"></span> <a href="mailto:info@ti-units.ru/"> info@ti-units.ru</a> <br/>
           </p>
         </div><!-- col -->
-        
-      
+
+
         <div class="col-md-6 col-sm-6  col-md-pull-4 col-sm-pull-6">
           <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=KhsP5ntd56AQBM3qqda1MaTtGKj6Cu5d&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;sourceType=constructor&amp;scroll=true"></script>
         </div>
       </div><!-- row -->
-    
+
     </div><!-- container -->
 		<?php
         require "_footer.php";
       ?>
-		
+
 		<div class="bitrix_form">
 			  <script data-skip-moving="true">
         (function(w,d,u,b){
@@ -565,14 +565,14 @@ src="https://www.facebook.com/tr?id=1493834924245543&ev=PageView&noscript=1"
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-		      	
+
 	<!-- <script type="text/javascript" src="js/retina.js"></script> -->
 	<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
   <!-- <script type="text/javascript" src="js/smoothscroll.js"></script> -->
 	<script type="text/javascript" src="js/jquery-func.js"></script>
 
 
-  
+
 <!-- Yandex.Metrika counter -->
 <script type="text/javascript">
 (function (d, w, c) {
@@ -616,6 +616,6 @@ src="https://www.facebook.com/tr?id=1493834924245543&ev=PageView&noscript=1"
 
     //]]>
     </script>
- 
+
   </body>
 </html>
