@@ -50,7 +50,7 @@ src="https://www.facebook.com/tr?id=1493834924245543&ev=PageView&noscript=1"
   </head>
 
   <body>
-<!-- git test -->
+
   <div id="navbar-main">
    <div id="fixed_nav" class="navbar navbar-inverse navbar-fixed-top ">
       <div class="container">
