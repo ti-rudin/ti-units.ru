@@ -1,0 +1,560 @@
+<script lang="ts">
+  import {
+    Button,
+    Modal,
+    Label,
+    Input,
+    AccordionItem,
+    Accordion,
+  } from "flowbite-svelte";
+  import {
+    Table,
+    TableBody,
+    TableBodyCell,
+    TableBodyRow,
+    TableHead,
+    TableHeadCell,
+    Carousel,
+    Thumbnails
+  } from "flowbite-svelte";
+
+  let index = 0;
+  let forward = true; // sync animation direction between Thumbnails and Carousel
+
+  let formModal = false;
+
+  async function get_info() {
+    let name = (<HTMLInputElement>document.getElementById("name")).value;
+    let tel = (<HTMLInputElement>document.getElementById("tel")).value;
+
+    const params = new URLSearchParams({ name, tel });
+    const res = await fetch(
+      `https://ti-units.ru/zayavka/?${params.toString()}`,
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      }
+    );
+    if (res.ok) {
+      alert("Спасибо за интерес к нашей компании! Мы свяжемся с Вами в ближайшее время.");
+      formModal = false; // Close the modal after successful submission
+    }
+  }
+
+  function toggleMenu() {
+    const mobileMenu = document.getElementById("mobile-menu-2");
+    const button = document.querySelector('[aria-controls="mobile-menu-2"]');
+
+    if (mobileMenu?.classList.contains("hidden")) {
+      (mobileMenu as HTMLElement).classList.remove("hidden");
+      button?.setAttribute("aria-expanded", "true");
+    } else {
+      (mobileMenu as HTMLElement).classList.add("hidden");
+      button?.setAttribute("aria-expanded", "false");
+    }
+  }
+
+  const toggleAccordion = (targetId: string) => {
+    const accordionBody = document.getElementById(targetId);
+    if (accordionBody !== null) {
+      accordionBody.style.display =
+        accordionBody.style.display === "block" ? "none" : "block";
+    }
+  };
+
+  export const images = [
+    {
+      alt: 'TI Units',
+      src: 'https://ti-units.ru/images/carousel/1.jpg',
+      title: 'TI Units'
+    },
+    {
+      alt: 'TI Units',
+      src: 'https://ti-units.ru/images/carousel/2.jpg',
+      title: 'TI Units'
+    },
+    {
+      alt: 'TI Units',
+      src: 'https://ti-units.ru/images/carousel/3.jpg',
+      title: 'TI Units'
+    },
+  ];
+</script>
+
+<body>
+  <header class="fixed w-full z-50">
+    <nav class="bg-blue-600 border-gray-200 py-2.5 dark:bg-gray-900">
+      <div
+        class="flex flex-wrap items-center justify-between max-w-screen-xl px-4 mx-auto"
+      >
+        <a href="/" class="flex items-center">
+          <span
+            class="self-center text-xl font-semibold whitespace-nowrap text-white border-2 border-white p-2"
+            >TI Units</span
+          >
+        </a>
+
+        <div class="flex items-center lg:order-2">
+          <button
+            data-collapse-toggle="mobile-menu-2"
+            type="button"
+            class="inline-flex items-center p-2 ml-1 text-sm text-gray-700 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+            aria-controls="mobile-menu-2"
+            aria-expanded="false"
+            on:click={toggleMenu}
+          >
+            <span class="sr-only">Open main menu</span>
+            <svg
+              class="w-6 h-6"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+              ><path
+                fill-rule="evenodd"
+                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                clip-rule="evenodd"
+              ></path></svg
+            >
+            <svg
+              class="hidden w-6 h-6"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+              ><path
+                fill-rule="evenodd"
+                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                clip-rule="evenodd"
+              ></path></svg
+            >
+          </button>
+        </div>
+        <div
+          class="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1"
+          id="mobile-menu-2"
+        >
+          <ul
+            class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0"
+          >
+            <li>
+              <a
+                href="#main"
+                class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded lg:bg-transparent lg:text-blue-700 lg:p-0 dark:text-white"
+                aria-current="page"
+                on:click={toggleMenu}>Главная</a
+              >
+            </li>
+            <li>
+              <a
+                href="#services"
+                class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"
+                on:click={toggleMenu}>Услуги</a
+              >
+            </li>
+            <li>
+              <a
+                href="#price"
+                class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"
+                on:click={toggleMenu}>Цены</a
+              >
+            </li>
+            <li>
+              <a
+                href="#contacts"
+                class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"
+                on:click={toggleMenu}>Контакты</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Start block -->
+  <section class="bg-white dark:bg-gray-900" id="main">
+    <img
+      class="mx-auto w-[1280px] pt-[60px] mb-4 rounded-lg lg:mb-0 lg:flex"
+      src="./images/h1.jpg"
+      alt=""
+    />
+    <div class="flex text-center max-w-screen-xl px-4 p-6 mx-auto">
+      <div class="mx-auto place-self-center lg:col-span-7">
+        <h1
+          class="max-w-2xl mb-4 text-4xl font-extrabold leading-none tracking-tight md:text-5xl xl:text-6xl dark:text-white"
+        >
+          Инновационные IT-решения для вашего бизнеса
+        </h1>
+        <p
+          class="max-w-2xl mb-6 font-light text-gray700 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400"
+        >
+          «TI Units» - это ведущая IT-компания, специализирующаяся на разработке программного обеспечения и активно применяющая искусственный интеллект (ИИ) для создания передовых решений.
+        </p>
+      </div>
+    </div>
+  </section>
+  <!-- End block -->
+
+  <!-- Start block -->
+  <section class="bg-gray-50 dark:bg-gray-800" id="about">
+    <div
+      class="max-w-screen-xl px-4 pt-8 mx-auto space-y-12 lg:space-y-20 lg:pt-24 lg:px-6"
+    >
+      <!-- Row -->
+      <div class="items-center gap-8 xl:gap-16">
+        <div class="text-gray-700 sm:text-lg dark:text-gray-400">
+          <h2
+            class="mb-4 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white"
+          >
+            Почему выбирают нас?
+          </h2>
+          <p class="mb-8 font-light lg:text-xl text-gray-700">
+            Мы предлагаем инновационные решения, которые помогают вашему бизнесу расти и развиваться.
+          </p>
+          <!-- List -->
+          <ul
+            role="list"
+            class="pt-8 space-y-5 border-t border-gray-200 my-7 dark:border-gray-700"
+          >
+            <li class="flex space-x-3">
+              <!-- Icon -->
+              <svg
+                class="flex-shrink-0 w-5 h-5 text-blue-500 dark:text-blue-400"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+                ><path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"
+                ></path></svg
+              >
+              <span
+                class="text-base font-medium leading-tight text-gray-900 dark:text-white"
+                >Высокое качество продукции.</span
+              >
+            </li>
+            <li class="flex space-x-3">
+              <!-- Icon -->
+              <svg
+                class="flex-shrink-0 w-5 h-5 text-blue-500 dark:text-blue-400"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+                ><path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"
+                ></path></svg
+              >
+              <span
+                class="text-base font-medium leading-tight text-gray-900 dark:text-white"
+                >Индивидуальный подход к каждому клиенту.</span
+              >
+            </li>
+            <li class="flex space-x-3">
+              <!-- Icon -->
+              <svg
+                class="flex-shrink-0 w-5 h-5 text-blue-500 dark:text-blue-400"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+                ><path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"
+                ></path></svg
+              >
+              <span
+                class="text-base font-medium leading-tight text-gray-900 dark:text-white"
+                >Активное применение ИИ.</span
+              >
+            </li>
+          </ul>
+          <p class="mb-8 font-light lg:text-xl text-gray-700">
+            Мы стремимся к совершенству и постоянно улучшаем наши продукты и услуги.
+          </p>
+        </div>
+      </div>
+      <!-- Row -->
+    </div>
+    <img
+      class="w-[1280px] flex mx-auto pb-[20px]"
+      src="./images/man.jpg"
+      alt=""
+    />
+  </section>
+  <!-- End block -->
+  <!-- Start block -->
+  <section class="bg-white dark:bg-gray-900" id="services">
+    <div
+      class="text-center items-center max-w-screen-xl px-4 py-8 mx-auto lg:grid lg:grid-cols-2 lg:gap-16 xl:gap-24 lg:py-6 lg:px-6"
+    >
+      <div class="col-span-2 mb-8">
+        <p class="text-lg font-medium text-blue-600 dark:text-blue-500">
+          Наши услуги
+        </p>
+        <h2
+          class="mt-3 mb-4 text-3xl font-extrabold tracking-tight text-gray-900 md:text-3xl dark:text-white"
+        >
+          Мы предлагаем широкий спектр IT-услуг
+        </h2>
+        <div
+          class="pt-6 mt-6 space-y-4 border-t border-gray-200 dark:border-gray-700"
+        ></div>
+        <div
+          class="col-span-2 space-y-8 md:grid md:grid-cols-2 md:gap-12 md:space-y-0"
+        >
+          <div class="flex flex-col items-center text-center">
+            <svg
+              class="w-8 h-8 text-blue-600 md:w-12 md:h-12 dark:text-blue-500"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M15.03 9.684h3.965c.322 0 .64.08.925.232.286.153.532.374.717.645a2.109 2.109 0 0 1 .242 1.883l-2.36 7.201c-.288.814-.48 1.355-1.884 1.355-2.072 0-4.276-.677-6.157-1.256-.472-.145-.924-.284-1.348-.404h-.115V9.478a25.485 25.485 0 0 0 4.238-5.514 1.8 1.8 0 0 1 .901-.83 1.74 1.74 0 0 1 1.21-.048c.396.13.736.397.96.757.225.36.32.788.269 1.211l-1.562 4.63ZM4.177 10H7v8a2 2 0 1 1-4 0v-6.823C3 10.527 3.527 10 4.176 10Z"
+                clip-rule="evenodd"
+              />
+            </svg>
+            <h3 class="mb-2 text-2xl font-bold dark:text-white">
+              Разработка ПО
+            </h3>
+            <p class="font-light text-gray-700 dark:text-gray-400">
+              Создание кастомизированных решений под ваши нужды
+            </p>
+          </div>
+          <div class="flex flex-col items-center text-center">
+            <svg
+              class="w-8 h-8 text-blue-600 md:w-12 md:h-12 dark:text-blue-500"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12.356 3.066a1 1 0 0 0-.712 0l-7 2.666A1 1 0 0 0 4 6.68a17.695 17.695 0 0 0 2.022 7.98 17.405 17.405 0 0 0 5.403 6.158 1 1 0 0 0 1.15 0 17.406 17.406 0 0 0 5.402-6.157A17.694 17.694 0 0 0 20 6.68a1 1 0 0 0-.644-.949l-7-2.666Z"
+              />
+            </svg>
+            <h3 class="mb-2 text-2xl font-bold dark:text-white">
+              Внедрение ИИ
+            </h3>
+            <p class="font-light text-gray-700 dark:text-gray-400">
+              Использование передовых технологий ИИ для улучшения ваших процессов
+            </p>
+          </div>
+          <div class="flex flex-col items-center text-center">
+            <svg
+              class="w-8 h-8 text-blue-600 md:w-12 md:h-12 dark:text-blue-500"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M5.005 10.19a1 1 0 0 1 1 1v.233l5.998 3.464L18 11.423v-.232a1 1 0 1 1 2 0V12a1 1 0 0 1-.5.866l-6.997 4.042a1 1 0 0 1-1 0l-6.998-4.042a1 1 0 0 1-.5-.866v-.81a1 1 0 0 1 1-1ZM5 15.15a1 1 0 0 1 1 1v.232l5.997 3.464 5.998-3.464v-.232a1 1 0 1 1 2 0v.81a1 1 0 0 1-.5.865l-6.998 4.042a1 1 0 0 1-1 0L4.5 17.824a1 1 0 0 1-.5-.866v-.81a1 1 0 0 1 1-1Z"
+                clip-rule="evenodd"
+              />
+              <path
+                d="M12.503 2.134a1 1 0 0 0-1 0L4.501 6.17A1 1 0 0 0 4.5 7.902l7.002 4.047a1 1 0 0 0 1 0l6.998-4.04a1 1 0 0 0 0-1.732l-6.997-4.042Z"
+              />
+            </svg>
+            <h3 class="mb-2 text-2xl font-bold dark:text-white">
+              Оптимизация процессов
+            </h3>
+            <p class="font-light text-gray-700 dark:text-gray-400">
+              Повышение эффективности вашего бизнеса
+            </p>
+          </div>
+          <div class="flex flex-col items-center text-center">
+            <svg
+              class="w-8 h-8 text-blue-600 md:w-12 md:h-12 dark:text-blue-500"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M5.617 2.076a1 1 0 0 1 1.09.217L8 3.586l1.293-1.293a1 1 0 0 1 1.414 0L12 3.586l1.293-1.293a1 1 0 0 1 1.414 0L16 3.586l1.293-1.293A1 1 0 0 1 19 3v18a1 1 0 0 1-1.707.707L16 20.414l-1.293 1.293a1 1 0 0 1-1.414 0L12 20.414l-1.293 1.293a1 1 0 0 1-1.414 0L8 20.414l-1.293 1.293A1 1 0 0 1 5 21V3a1 1 0 0 1 .617-.924ZM9 7a1 1 0 0 0 0 2h6a1 1 0 1 0 0-2H9Zm0 4a1 1 0 1 0 0 2h6a1 1 0 1 0 0-2H9Zm0 4a1 1 0 1 0 0 2h6a1 1 0 1 0 0-2H9Z"
+                clip-rule="evenodd"
+              />
+            </svg>
+            <h3 class="mb-2 text-2xl font-bold dark:text-white">
+              Поддержка и обслуживание
+            </h3>
+            <p class="font-light text-gray-700 dark:text-gray-400">
+              Постоянная поддержка и обновления
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End block -->
+ <!-- Start block -->
+ <section class="bg-gray-50 dark:bg-gray-800">
+  <div class="max-w-screen-xl min-h-200  px-4 py-4 mx-auto text-center lg:px-6">
+
+    <Carousel {images} {forward} class="min-h-[420px]" imgClass=" w-fit "  let:Indicators let:Controls bind:index>
+      <Controls />
+      <Indicators />
+    </Carousel>
+    <Thumbnails {images} {forward} bind:index />
+  </div>
+  </section>
+  <!-- End block -->
+  <!-- Start block -->
+  <section class="bg-white dark:bg-gray-900">
+    <div class="max-w-screen-xl px-4 pb-8 py-8 mx-auto lg:pb-24 lg:px-6">
+      <h2
+        class="mb-6 text-3xl font-extrabold tracking-tight text-center text-gray-900 lg:mb-8 lg:text-3xl dark:text-white"
+      >
+        Вопросы и ответы.
+      </h2>
+      <div class="max-w-screen-md mx-auto">
+        <Accordion flush>
+          <AccordionItem>
+            <span slot="header" class="text-gray-700"
+              >Как происходит согласование, заказ, оплата и получение услуг?</span
+            >
+            <p class="mb-2 text-gray-700 dark:text-gray-400">
+              При помощи наших сотрудников, либо по информации на сайте, Вам необходимо определиться с Вашими потребностями и сообщить сотруднику информацию для заказа:
+              <br />
+              1. В какой город будет осуществляться доставка;
+              <br />
+              2. Какой объем (количество штук);
+              <br />
+              3. Как будет происходить оплата (наличный или безналичный расчет);
+              <br />
+              4. Сообщить об оплате;
+              <br />
+              5. Согласовать день доставки.
+            </p>
+            <p class="mb-2 text-gray-700 dark:text-gray-400">
+              <strong>Порядок оплаты</strong><br />
+              Отгрузка товара происходит после его оплаты. Способы оплаты:
+              <br />
+              - БЕЗНАЛИЧНЫЙ РАСЧЕТ (с НДС)<br />
+              Заключаем договор, получаем от вас заказ и выставляем счет на оплату. После оплаты счета согласовываем день доставки.
+              <br />
+              - НАЛИЧНЫЙ РАСЧЕТ согласовывается с менеджером.
+            </p>
+          </AccordionItem>
+          <AccordionItem>
+            <span slot="header" class="text-gray-700"
+              >Как осуществляется доставка?</span
+            >
+            <p class="mb-2 text-gray-700 dark:text-gray-400">
+              Доставка осуществляется транспортными компаниями. Мы отправляем товар со склада в Москве.
+            </p>
+          </AccordionItem>
+          <AccordionItem>
+            <span slot="header" class="text-gray-700"
+              >Какие гарантии предоставляет компания?</span
+            >
+            <p class="mb-2 text-gray-700 dark:text-gray-400">
+              Мы гарантируем высокое качество нашей продукции. Все мойки проходят строгий контроль качества перед отправкой.
+            </p>
+          </AccordionItem>
+          <AccordionItem>
+            <span slot="header" class="text-gray-700"
+              >Как связаться с компанией?</span
+            >
+            <p class="mb-2 text-gray-700 dark:text-gray-400">
+              Вы можете связаться с нами по электронной почте <a class="font-bold" href="mailto:info@ti-units.ru">info@ti-units.ru</a>
+            </p>
+          </AccordionItem>
+        </Accordion>
+      </div>
+    </div>
+  </section>
+  <!-- End block -->
+
+  <!-- Start block -->
+  <section class="bg-gray-50 dark:bg-gray-800">
+    <div class="max-w-screen-xl px-4 py-8 mx-auto lg:py-16 lg:px-6">
+      <div class="max-w-screen-sm mx-auto text-center">
+        <h2
+          class="mb-4 text-3xl font-extrabold leading-tight tracking-tight text-gray-900 dark:text-white"
+        >
+          Закажите услуги TI Units сегодня.
+        </h2>
+        <p class="mb-6 font-light text-gray-700 dark:text-gray-400 md:text-lg">
+          Оставьте e-mail или телефон - перезвоним в течение 1 мин!
+        </p>
+        <Button on:click={() => (formModal = true)}>Заказать</Button>
+      </div>
+    </div>
+  </section>
+  <!-- End block -->
+  <!-- Start block -->
+  <section class="bg-white dark:bg-gray-900" id="contacts">
+    <div class="max-w-screen-xl px-4 py-4 mx-auto lg:px-6">
+      <div class="max-w-screen-sm mx-auto text-center">
+        <h2
+          class="mb-4 my-8 text-3xl font-extrabold leading-tight tracking-tight text-gray-900 dark:text-white"
+        >
+          Контакты
+        </h2>
+
+        <p class="mb-6 font-light text-gray-700 dark:text-gray-400 md:text-lg">
+          эл. почта: <a class="font-bold" href="mailto:info@ti-units.ru" >info@ti-units.ru</a>
+        </p>
+
+      </div>
+    </div>
+  </section>
+  <!-- End block -->
+  <footer class="bg-white dark:bg-gray-800">
+    <div class="max-w-screen-xl p-2 py-2 mx-auto">
+      <hr
+        class="my-1 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8"
+      />
+      <div class="text-center">
+        <a
+          href="/"
+          class="flex items-center justify-center mb-5 text-2xl font-semibold text-gray-900 dark:text-white"
+        >
+          TI Units
+        </a>
+        <span class="block text-sm text-center text-gray-700 dark:text-gray-400"
+          >© 2024 TI Units™. Все права защищены.
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal -->
+  <Modal bind:open={formModal} size="xs" autoclose={true} class="w-full">
+    <form class="flex flex-col space-y-6" action="#">
+      <h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white">
+        Оставьте e-mail или телефон - перезвоним в течении 1 мин!
+      </h3>
+      <Label class="space-y-2">
+        <span>Имя</span>
+        <Input
+          type="text"
+          name="name"
+          id="name"
+          placeholder="(необязательно)"
+          required
+        />
+      </Label>
+      <Label class="space-y-2">
+        <span>Телефон или Email</span>
+        <Input
+          type="text"
+          name="tel"
+          id="tel"
+          placeholder="8(XXX)XXX-XX-XX или email@example.com"
+          required
+        />
+      </Label>
+      <Button type="submit" on:click={get_info} class="w-full1"
+        >Отправить</Button
+      >
+    </form>
+  </Modal>
+</body>
